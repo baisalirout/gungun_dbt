@@ -1,0 +1,1 @@
+select customer_id, concat(first_name,' ',last_name) from dev_db.bronze.customers;
