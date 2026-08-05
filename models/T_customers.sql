@@ -1,1 +1,9 @@
-select * from DEV_DB.BRONZE.customers
+{{
+    config(
+        materialized='table',
+        transient = false
+    )
+}}
+
+
+select * from {{ source('s1', 'customers') }}

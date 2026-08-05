@@ -1,0 +1,25 @@
+
+
+models:
+  - name: T_customers
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: T_Orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('T_customers')
+                field: customer_id
+          
+        
